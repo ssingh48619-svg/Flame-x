@@ -4,95 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        header{
-            display:flex;
-            justify-content: space-around;
-            width:800;
-            margin: auto;
-            margin-top: 30px;
-            font-size: 40px;
-            background-color: rgba(0, 0,0, 0.8);
-            
-            color: brown;
-
-        }
-        nav{
-            display: flex;
-            position: relative;
-            top: 10px;
-            justify-content:space-evenly;
-            gap: 10px;
-            color:grey;
-            font-size: 20px;
-            
-        
-        }
-        .a button{
-            background-color: brown;
-            border: hidden;
-            font-size: 25px;
-            position:relative;
-            bottom: 5px;
-        }
-        .logo{
-            color: rgb(42, 101, 165);
-        }
-        .logo:hover{
-            color: rgba(165, 42, 42, 1);
-            font-size: 70px ;
-        }
-         h1{
-            font-size: 60px;
-            margin-top: 20;
-            padding: 20;
-         }
-         h3{
-            font-size: 30px;
-            margin: 10px;
-         }
-         p{
-            display:flex
-            
-         }
-         .logo{
-            white-space: nowrap;
-            overflow: hidden;
-            width:0;
-            animation: typing 1s steps(30, end) forwards,blink 0.1s step-end;
-         }
-@keyframes typing{
-    from {width:0;}
-    to {width:25ch;}
-}
-    </style>
 </head>
-<body>
+<body style="background-color:grey;"></body>
     <header>
-        <div>Learn it</div>
-        <nav>
-            <span>Landing</span>
-            <span>Pages</span>
-            <span>Account</span>
-            <span>Documentation</span>
-        </nav>
-        <div class="a">
-            <button>Buy now</button>
-        </div>
+        <h1>FIRST COPY NIKE</h1>
+       
     </header>
-    <div class="main" style="display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 40px auto;">
-        <div>
-            <h1>WELCOME TO <div class="logo">LEARN IT</div></h1>
-            <h3 style="color: rgb(240, 6, 6);"> DEVLOP FUTURE</h3>
-            <p style="font-size: 25px; color: #f80808; margin-top: 20px;">
-                BUILT A BEAUTIFUL, modern learning platform to empower your growth.
-            </p>
-            <button class="b" style="background-color: brown;"> VIEW ALL PAGES&gt;</button>
-            <button class="c" style="background-color: brown;">DOCUMENTATION&gt;</button>
-        </div>
-        <div style="flex-shrink: 0; color: brown;">
-            <img src="images.png" alt="Learn It" style="width:350px; height:auto; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); object-fit: cover;">
-        </div>
-    </div>
+    <main>
+        <section>
+            <h2>Featured Sneakers</h2>
+            <div style="display: flex; gap: 2rem;">
+                <div style="border: 1px solid #ccc; padding: 1rem; width: 200px;">
+                    <img src="1725373014-nike-ultrafly-66d71a1d7ee54.jpg" alt="Sneaker 1" style="width:100%;">
+                    <h3>ZOOM X</h3>
+                                        <span style="display:inline-block; background:red; color:white; padding:2px 8px; border-radius:4px; font-weight:bold; font-size:0.9em;">50% OFF</span>
+                    <p>₹15000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div style="border: 1px solid #ccc; padding: 1rem; width: 200px;">
+                    <img src="11508305787142-Nike-Men-Grey-Colourblocked-Textile-KOMYUTER-SE-Mid-Top-Sneakers-9691508305786996-2.webp" alt="Sneaker 2" style="width:100%;">
+                    <h3>TOP ANKELE</h3>
+                                        <span style="display:inline-block; background:red; color:white; padding:2px 8px; border-radius:4px; font-weight:bold; font-size:0.9em;">50% OFF</span>
+                    <p>₹11000</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div style="border: 1px solid #ccc; padding: 1rem; width: 200px;">
+                    <img src="images (1).jpeg" alt="Sneaker 3" style="width:100%;">
+                    <h3>AIR JORDAN 1</h3>
+                    <span style="display:inline-block; background:red; color:white; padding:2px 8px; border-radius:4px; font-weight:bold; font-size:0.9em;">50% OFF</span>
+                    <p>₹80000   </p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="margin-top:2rem; text-align:center;">
+        <p>&copy; 2025 Sneaker Shop. All rights reserved.</p>
+        
+    </footer>
 </body>
 </html>
