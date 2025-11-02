@@ -3,96 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        header{
-            display:flex;
-            justify-content: space-around;
-            width:800;
-            margin: auto;
-            margin-top: 30px;
-            font-size: 40px;
-            background-color: rgba(0, 0,0, 0.8);
-            
-            color: brown;
-
-        }
-        nav{
-            display: flex;
-            position: relative;
-            top: 10px;
-            justify-content:space-evenly;
-            gap: 10px;
-            color:grey;
-            font-size: 20px;
-            
-        
-        }
-        .a button{
-            background-color: brown;
-            border: hidden;
-            font-size: 25px;
-            position:relative;
-            bottom: 5px;
-        }
-        .logo{
-            color: rgb(42, 101, 165);
-        }
-        .logo:hover{
-            color: rgba(165, 42, 42, 1);
-            font-size: 70px ;
-        }
-         h1{
-            font-size: 60px;
-            margin-top: 20;
-            padding: 20;
-         }
-         h3{
-            font-size: 30px;
-            margin: 10px;
-         }
-         p{
-            display:flex
-            
-         }
-         .logo{
-            white-space: nowrap;
-            overflow: hidden;
-            width:0;
-            animation: typing 1s steps(30, end) forwards,blink 0.1s step-end;
-         }
-@keyframes typing{
-    from {width:0;}
-    to {width:25ch;}
-}
-    </style>
+    <title>portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    
+    a{
+        color: whitesmoke;
+    }
+    .navbar{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 25px 9%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        visibility: hidden;
+        opacity: 0;
+        animation: show-content 1.5s linear forwards;
+        animation-delay: 1.2s;
+    }
+    @keyframes show-content{
+        100%{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .logo{
+        font-size: 30px;
+        font-weight: 700;
+
+    }
+   
+    .navbar ul{
+        list-style: none;
+        display: flex;
+        margin-left: 35px;
+    }
+    .navbar ul li{
+        margin: 0 15px;
+    }
+    .navbar ul li a{
+        font-size: 18px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: .5s;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li.active a
+    {
+        color: rgb(153, 255, 0);
+    }
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        height: 100vh;
+        padding: 60px 9% 0;
+         visibility: hidden;
+        opacity: 0;
+        animation: show-content 1.5s linear forwards;
+        animation-delay: 1.6s;
+    }
+    .home-info h1{
+        font-size: 60px;
+        color: whitesmoke;
+    }
+    .home-info h2{  
+        font-size: 32px;
+        color: rgb(153, 255, 0);
+        margin: -10px 0;
+    }
+    .home-info p{
+        font-size: 16px;
+        color: whitesmoke;
+        margin: 10px 0 25px;
+        line-height: 1.6;
+    }
+    .buttons{
+        display: flex;
+        align-items: center;
+    }
+    .btn{
+        display: inline-block;
+        padding: 10px 35px;
+        background-color: greenyellow;
+        border: 2px,solid greenyellow;
+        border-radius: 40px;
+        box-shadow: 0 0 10px greenyellow;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1f242d;
+    }
+   .btn:hover{
+    background-color: transparent;
+    color: greenyellow;
+    box-shadow: none;
+   }
+   .icons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 20px;
+   
+   }
+    .icons i{
+     font-size: 20px;
+     margin: 8px;
+    display:inline-flex;
+    padding: 0% 10px;
+    border: 2px solid greenyellow;
+    border-radius: 50%;
+    background-color: transparent;
+    color: greenyellow;
+    margin: 0 8px;
+    transition: .5s;
+    }
+    .icons i:hover{
+        background-color: greenyellow;
+        color: #1f242d;
+        transition: .3s;
+    }
+  .img-box{
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index:1;
+
+
+  }
+    .img-box::before,    .img-box::after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent ,rgb(154, 255, 1)); 
+     animation: rotate-border 10s linear infinite;  
+    
+    }
+    .img{   
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+     animation-delay: -5s;
+    }
+    .img-box::after{
+        animation-delay: -5s;
+    }
+  @keyframes rotate-border{
+    
+    100%{
+        transform: rotate(360deg);
+    }
+  }
+  .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 50%;
+    border: .1px solid black;
+    display: flex;
+    justify-content: center;
+    z-index:1;
+    align-items: center;
+    overflow: hidden;
+  }
+    .img-item img{
+       position: absolute;
+       
+       display: block;
+       width : 85%;
+     object-fit: cover;
+     mix-blend-mode: lighten;
+     z-index:1;
+    }
+    .bars-animation{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        z-index: -1;
+        
+    }
+    .bar{
+        width: 100%;
+        height: 100%;
+        background: #1f242d;
+        
+        transform: translatey(-100%);
+        animation: show-bars 0.5s forwards;
+        animation-delay: calc(.1s * var(--i)); ;
+    }
+    @keyframes show-bars{
+        100%{
+            transform: translatey(0);
+        }
+        }
+
+
+
+</style>
 <body>
-    <header>
-        <div>Learn it</div>
-        <nav>
-            <span>Landing</span>
-            <span>Pages</span>
-            <span>Account</span>
-            <span>Documentation</span>
-        </nav>
-        <div class="a">
-            <button>Buy now</button>
-        </div>
-    </header>
-    <div class="main" style="display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 40px auto;">
-        <div>
-            <h1>WELCOME TO <div class="logo">LEARN IT</div></h1>
-            <h3 style="color: rgb(240, 6, 6);"> DEVLOP FUTURE</h3>
-            <p style="font-size: 25px; color: #f80808; margin-top: 20px;">
-                BUILT A BEAUTIFUL, modern learning platform to empower your growth.
-            </p>
-            <button class="b" style="background-color: brown;"> VIEW ALL PAGES&gt;</button>
-            <button class="c" style="background-color: brown;">DOCUMENTATION&gt;</button>
-        </div>
-        <div style="flex-shrink: 0; color: brown;">
-            <img src="images.png" alt="Learn It" style="width:350px; height:auto; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); object-fit: cover;">
-        </div>
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio</a>
+        <ul>
+            <li class="active">
+            <a href="index.html">Home</a></li>
+            <li><a href="node_modules/about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
     </div>
+    <section class="home" id="home">
+       <div class="home-info">
+        <h1>SATYAM KUMAR</h1>
+        <h2>Web Developer</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed consectetur facere tenetur officiis. Ducimus facilis ad veniam ipsum voluptatibus perspiciatis debitis magni dolore,</p>
+       
+       <div class="buttons">
+        <a href="#" class="btn">DOWNLOAD CV</a>
+        <div class="icons">
+            <a href="#"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+        </div>
+       </div>
+       <div class="img">
+        <div class="img-box">
+             <div class="img-item">
+                <img src="6265041487729379568.jpg">
+                </div>
+             </div>
+
+       </div>
+        
+
+    </section>
+
 </body>
 </html>
